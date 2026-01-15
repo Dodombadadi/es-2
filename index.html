@@ -9,41 +9,39 @@
 
     <p>Serie di esercizi per comprendere Javascript + html</p>
 
-    <p>1 - Dati 3 numeri in input indicare il maggiore</p>
+    <p>2 - Dati 3 numeri in input calcolare i loro quadrati</p>
 
     <div>
         <input type="number" name="n1" id="n1">
         <input type="number" name="n2" id="n2">
         <input type="number" name="n3" id="n3">
 
-        <button onclick="CalcolaMaggiore()">Confronta i tre numeri</button>
+        <button onclick="CalcolaQuadrati()">Calcola i quadrati</button>
     </div>
 
     <p id="risultato"></p>
 
     <script>
-        function maggiore(a, b, c) {
-            if (a > b && a > c) {
-                return a;
-            } else if (b > a && b > c) {
-                return b;
-            } else {
-                return c;
-            }
+        function quadrato(x) {
+            return x * x;
         }
 
-        function CalcolaMaggiore() {
+        function CalcolaQuadrati() {
             let num1 = parseFloat(document.getElementById("n1").value);
             let num2 = parseFloat(document.getElementById("n2").value);
             let num3 = parseFloat(document.getElementById("n3").value);
 
-            let max = 0;
-            max = maggiore(num1, num2, num3);
+            let q1 = quadrato(num1);
+            let q2 = quadrato(num2);
+            let q3 = quadrato(num3);
 
             document.getElementById("risultato").innerHTML =
-                "Il numero maggiore è: " + max;
+                "Quadrato del primo numero: " + q1 + "<br>" +
+                "Quadrato del secondo numero: " + q2 + "<br>" +
+                "Quadrato del terzo numero: " + q3;
         }
     </script>
 
 </body>
 </html>
+
